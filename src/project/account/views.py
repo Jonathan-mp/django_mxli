@@ -6,7 +6,6 @@ from . import forms
 from django.utils import translation
 from django.utils.translation import gettext as _, ngettext as _n
 
-
 # Register your models here.
 
 def login(request):

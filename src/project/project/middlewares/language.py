@@ -2,6 +2,8 @@
 
 from django.utils import translation
 from django.conf import settings
+from django.utils import timezone
+import pytz
 from django.utils.deprecation import MiddlewareMixin
 
 class SubdomainLanguageMiddleware(MiddlewareMixin):
@@ -20,8 +22,14 @@ class SubdomainLanguageMiddleware(MiddlewareMixin):
                 self.lang = url_lang
         except IndexError:
             pass
-        
-        translation.activate(self.lang)
-        request.LANGUAGE_CODE = self.lang
+        request.session['django_timezone'] = 'Asia/Jakarta'
+        print(pytz.timezone('Asia/Jakarta'))
+        print(pytz.timezone('Asia/Jakarta'))
+        print(pytz.timezone('Asia/Jakarta'))
+        print(pytz.timezone('Asia/Jakarta'))
+        timezone.activate(pytz.timezone('Asia/Jakarta'))
+        if self.lang:
+            translation.activate(self.lang)
+            request.LANGUAGE_CODE = self.lang
     
             

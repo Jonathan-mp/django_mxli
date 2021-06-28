@@ -55,10 +55,36 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'project.middlewares.language.SubdomainLanguageMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+    #'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
+
+# Internationalization
+# https://docs.djangoproject.com/en/3.1/topics/i18n/
+
+LOCALE_PATHS = (
+    os.path.join(PROJECT_ROOT, 'project/locale/'),
+    os.path.join(PROJECT_ROOT, 'account/locale/'),
+    os.path.join(PROJECT_ROOT, 'templates/locale/'),
+)
+
+LANGUAGE_CODE = 'es-mx'
+
+LANGUAGES = (
+    ('en', _('Ingles')),
+    ('es-mx', _('Mexico')),
+    ('es', _('Español')),
+)
+
+TIME_ZONE = 'UTC'
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True
+
 
 TEMPLATES = [
     {
@@ -108,31 +134,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
-
-LOCALE_PATHS = (
-    os.path.join(PROJECT_ROOT, 'project/locale/'),
-    os.path.join(PROJECT_ROOT, 'account/locale/'),
-    os.path.join(PROJECT_ROOT, 'templates/locale/'),
-)
-
-LANGUAGE_CODE = 'es-mx'
-
-LANGUAGES = (
-    ('en', _('Ingles')),
-    ('es-mx', _('Mexico')),
-    ('es', _('Español')),
-)
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
