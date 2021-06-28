@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from django.utils.translation import ugettext_lazy as _ #ugettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -53,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'project.middlewares.language.SubdomainLanguageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -109,7 +112,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LOCALE_PATHS = (
+    os.path.join(PROJECT_ROOT, 'project/locale/'),
+    os.path.join(PROJECT_ROOT, 'account/locale/'),
+    os.path.join(PROJECT_ROOT, 'templates/locale/'),
+)
+
+LANGUAGE_CODE = 'es-mx'
+
+LANGUAGES = (
+    ('en', _('Ingles')),
+    ('es-mx', _('Mexico')),
+    ('es', _('Español')),
+)
 
 TIME_ZONE = 'UTC'
 

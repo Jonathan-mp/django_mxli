@@ -6,5 +6,6 @@ from django.conf.urls import url
 app_name = 'account'
 
 urlpatterns = [
-    url(r'^login$', views.login, name='account_login'),
+    path('login', views.login, name='login'),
+    path('example', views.example, name='example'),
 ]
