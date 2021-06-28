@@ -23,7 +23,14 @@ def login(request):
 
 
 def example(request):
+    template_name = "account/example.html"
     n = 1
     message1 = _n('%d archivo actualizado', '%d archivos actualizados', n)%n
     message2 = _n('{contactos} contacto actualizado', '{contactos} contactos actualizados', n).format(contactos=n)
-    return HttpResponse(f'{message1} <br>{message2}<br>OK!')
+    
+    context = {
+        'message1': message1,
+        'message2': message2
+    }
+    return render(request, template_name, context)
+    #return HttpResponse(f'{message1} <br>{message2}<br>OK!')
