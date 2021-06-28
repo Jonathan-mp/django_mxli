@@ -141,7 +141,7 @@ iframe {
 .txt1 {
   font-family: Raleway-SemiBold;
   font-size: 13px;
-  color: #555555;
+  color: #ffff;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -149,14 +149,14 @@ iframe {
 .txt2 {
   font-family: Raleway-Regular;
   font-size: 13px;
-  color: #999999;
+  color: #ffff;
   line-height: 1.4;
 }
 
 .txt3 {
   font-family: Raleway-Regular;
   font-size: 13px;
-  color: #555555;
+  color: #ffff;
   line-height: 1.4;
 }
 
@@ -182,13 +182,13 @@ iframe {
   align-items: center;
   padding: 15px;
   
-  background-color: #ebebeb;
+  background-color:rgb(35, 38, 40);
 }
 
 
 .wrap-login100 {
   width: 560px;
-  background: #fff;
+  background: rgb(24, 26, 27);
   border-radius: 10px;
   position: relative;
 }
@@ -204,7 +204,7 @@ iframe {
 .login100-form-title {
   font-family: Raleway-Medium;
   font-size: 30px;
-  color: #555555;
+  color: #78ca6a;
   line-height: 1.2;
   text-transform: uppercase;
   text-align: left;
@@ -332,7 +332,7 @@ iframe {
 .label-checkbox100 {
   font-family: Raleway-Regular;
   font-size: 13px;
-  color: #999999;
+  color: #ffff;
   line-height: 1.4;
 
   display: block;
@@ -370,7 +370,7 @@ iframe {
 }
 
 .input-checkbox100:checked + .label-checkbox100::before {
-  color: #57b846;
+  color: #7eaf75;
 }
 
 
