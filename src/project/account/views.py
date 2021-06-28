@@ -24,7 +24,7 @@ def login(request):
 
 
 def example(request):
-    n = 11
+    n = 1
     message1 = _n('%d archivo actualizado', '%d archivos actualizados', n)%n
     message2 = _n('{contactos} contacto actualizado', '{contactos} contactos actualizados', n).format(contactos=n)
     return HttpResponse(f'{message1} <br>{message2}<br>OK!')
